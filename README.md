@@ -1,11 +1,6 @@
-# A fresh IntelliJ plugin
+# Simple IntelliJ plugin to demonstrate file type detection, based on content
 
-[![Build Status](https://travis-ci.org/jansorg/intellij-plugin-base.svg?branch=master)](https://travis-ci.org/jansorg/intellij-plugin-base)
-
-This is a template for a new IntelliJ plugin build by Gradle.
-The file `intellij-plugin-base.iml` is the module file you should import in IntelliJ.
-
-The build configuration uses Gradle with enabled Jacoco test coverage reports.
+[![Build Status](https://travis-ci.org/jansorg/intellij-file-type-detecetion.svg?branch=master)](https://travis-ci.org/jansorg/intellij-file-type-detection)
 
 # Directory structure
 
@@ -18,8 +13,6 @@ The build configuration uses Gradle with enabled Jacoco test coverage reports.
 
 `.travis.yml` configures a [Travic-ci.org](https://travis-ci.org/) build.
 
-
 # Documentation
-- Introduction to plugin development: https://www.plugin-dev.com/intellij/introduction/
-- IntelliJ DevGuide: http://www.jetbrains.org/intellij/sdk/docs/welcome.html
-- Gradle build plugin: http://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+
+- Article about this topic: https://www.plugin-dev.com/intellij/custom-language/file-type-detection/
