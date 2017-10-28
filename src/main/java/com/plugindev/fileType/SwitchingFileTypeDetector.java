@@ -23,15 +23,15 @@ public class SwitchingFileTypeDetector implements FileTypeRegistry.FileTypeDetec
     @Override
     public FileType detect(@NotNull VirtualFile file, @NotNull ByteSequence firstBytes, @Nullable CharSequence firstCharsIfText) {
         if (firstCharsIfText != null) {
-            if ("<?xml".equals(firstCharsIfText.subSequence(0, 5).toString())) {
+            if (firstCharsIfText.length() >= 5 && "<?xml".equals(firstCharsIfText.subSequence(0, 5).toString())) {
                 return StdFileTypes.XML;
             }
 
-            if ("<html".equals(firstCharsIfText.subSequence(0, 5).toString())) {
+            if (firstCharsIfText.length() >= 5 && "<html".equals(firstCharsIfText.subSequence(0, 5).toString())) {
                 return StdFileTypes.HTML;
             }
 
-            if ("package".equals(firstCharsIfText.subSequence(0, 7).toString())) {
+            if (firstCharsIfText.length() >= 7 && "package".equals(firstCharsIfText.subSequence(0, 7).toString())) {
                 return StdFileTypes.JAVA;
             }
         }

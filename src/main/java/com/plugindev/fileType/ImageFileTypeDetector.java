@@ -32,8 +32,10 @@ public class ImageFileTypeDetector implements FileTypeRegistry.FileTypeDetector 
     @Nullable
     @Override
     public FileType detect(@NotNull VirtualFile file, @NotNull ByteSequence firstBytesSequence, @Nullable CharSequence firstCharsIfText) {
-        CALLS.incrementAndGet();
-        LOG.warn(String.format("JPEG. Calls: %d, file: %s", CALLS.get(), file.getNameSequence()));
+        synchronized (this) {
+            CALLS.incrementAndGet();
+            LOG.warn(String.format("JPEG. Calls: %d, file: %s", CALLS.get(), file.getNameSequence()));
+        }
 
         if (firstCharsIfText == null && firstBytesSequence.getOffset() == 0) {
             for (byte[] bytes : MAGIC_BYTES) {
@@ -57,6 +59,6 @@ public class ImageFileTypeDetector implements FileTypeRegistry.FileTypeDetector 
 
     @Override
     public int getVersion() {
-        return 1;
+        return 2;
     }
 }

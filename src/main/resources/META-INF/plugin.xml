@@ -22,10 +22,10 @@
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileTypeDetector implementation="com.plugindev.fileType.ImageFileTypeDetector"/>
+        <fileTypeDetector implementation="com.plugindev.fileType.ImageFileTypeDetector" order="FIRST" />
         <fileTypeDetector implementation="com.plugindev.fileType.SwitchingFileTypeDetector"/>
 
-        <fileTypeFactory implementation="com.plugindev.fileType.JsonDataOverrideFactory"/>
+        <fileTypeFactory implementation="com.plugindev.fileType.JsonDataOverrideFactory" />
     </extensions>
 
     <actions>

@@ -31,7 +31,13 @@ class JsonOverrideByParent extends LanguageFileType implements FileTypeIdentifia
     @Override
     public boolean isMyFileType(@NotNull VirtualFile file) {
         CALLS.incrementAndGet();
-        LOG.warn(String.format("plain text. Calls: %d, file: %s", CALLS.get(), file.getNameSequence()));
+        LOG.warn(String.format("json-data. Calls: %d, file: %s", CALLS.get(), file.getNameSequence()));
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            //ignores
+        }
 
         VirtualFile parent = file.getParent();
         return parent != null && "json-data".equalsIgnoreCase(parent.getName());
