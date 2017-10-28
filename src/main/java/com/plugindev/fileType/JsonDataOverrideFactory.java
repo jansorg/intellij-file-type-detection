@@ -8,13 +8,13 @@ import org.jetbrains.annotations.NotNull;
  * File type factory which registers the plain-text override detection.
  *
  * @author jansorg
- * @see PlainTextOverrideByParent
+ * @see JsonOverrideByParent
  */
-public class PlainTextOverrideFactory extends FileTypeFactory {
-    static final PlainTextOverrideByParent FILE_TYPE = new PlainTextOverrideByParent();
+public class JsonDataOverrideFactory extends FileTypeFactory {
+    static final JsonOverrideByParent JSON_OVERRIDE = new JsonOverrideByParent();
 
     @Override
     public void createFileTypes(@NotNull FileTypeConsumer consumer) {
-        consumer.consume(FILE_TYPE);
+        consumer.consume(JSON_OVERRIDE);
     }
 }

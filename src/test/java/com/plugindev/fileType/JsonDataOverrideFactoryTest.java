@@ -10,15 +10,15 @@ import java.nio.file.Paths;
 /**
  * @author jansorg
  */
-public class PlainTextOverrideFactoryTest extends LightCodeInsightFixtureTestCase {
+public class JsonDataOverrideFactoryTest extends LightCodeInsightFixtureTestCase {
     public void testPlainTextOverride() {
-        VirtualFile file = myFixture.copyFileToProject("plain-text/mydata.unknown");
-        Assert.assertEquals("The file type must be overridden to plain text", PlainTextOverrideFactory.FILE_TYPE, file.getFileType());
+        VirtualFile file = myFixture.copyFileToProject("json-data/mydata.unknown");
+        Assert.assertEquals("The file type must be overridden to JSON", JsonDataOverrideFactory.JSON_OVERRIDE, file.getFileType());
     }
 
     public void testNoPlainTextOverride() {
         VirtualFile file = myFixture.copyFileToProject("jpeg-files/garrett-parker-247225.myjpeg");
-        Assert.assertNotEquals("The file type must be overridden to plain text", PlainTextOverrideFactory.FILE_TYPE, file.getFileType());
+        Assert.assertNotEquals("The file type must be overridden to plain text", JsonDataOverrideFactory.JSON_OVERRIDE, file.getFileType());
     }
 
     @Override
