@@ -14,6 +14,8 @@ import javax.swing.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * Marks all files which are directly beneath a directory named "plain-text" as plain text files.
+ *
  * @author jansorg
  */
 class PlainTextOverrideByParent extends LanguageFileType implements FileTypeIdentifiableByVirtualFile {
@@ -32,14 +34,16 @@ class PlainTextOverrideByParent extends LanguageFileType implements FileTypeIden
         CALLS.incrementAndGet();
         LOG.warn(String.format("plain text. Calls: %d, file: %s", CALLS.get(), file.getNameSequence()));
 
+/*
         try {
             throw new IllegalStateException();
         } catch (IllegalStateException e) {
             e.printStackTrace(System.err);
         }
+*/
 
         VirtualFile parent = file.getParent();
-        return parent != null && parent.getName().equalsIgnoreCase("plain-text");
+        return parent != null && "plain-text".equalsIgnoreCase(parent.getName());
     }
 
     @NotNull

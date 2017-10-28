@@ -9,9 +9,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Demonstration of a file type detector which switches the file type depending on the first bytes.
+ * It return the XML file type for files beginning with '<?xml'.
+ * It return the HTML file type for files beginning with '<html'.
+ * It return the Java file type for files beginning with 'package'.
+ * <p>
+ * Of course, this is very basic support for these file types. It is meant as a demonstration how file type switching could be done.
+ *
  * @author jansorg
  */
-public class SwitchingFileTypeDetector implements FileTypeRegistry.FileTypeDetector  {
+public class SwitchingFileTypeDetector implements FileTypeRegistry.FileTypeDetector {
     @Nullable
     @Override
     public FileType detect(@NotNull VirtualFile file, @NotNull ByteSequence firstBytes, @Nullable CharSequence firstCharsIfText) {

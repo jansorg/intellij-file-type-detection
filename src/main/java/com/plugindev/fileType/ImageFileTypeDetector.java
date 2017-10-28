@@ -13,6 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * This file type detector is able to detect JPEG files which have an file extension which isn't *.jpg.
+ * If a file starts with the magic bytes of a JPEG then it's mapped to the image/jpeg file type.
  *
  * @author jansorg
  */
@@ -56,6 +57,6 @@ public class ImageFileTypeDetector implements FileTypeRegistry.FileTypeDetector 
 
     @Override
     public int getVersion() {
-        return 2;
+        return 1;
     }
 }
